@@ -1,0 +1,1 @@
+export const PG_WEB_URL = "http://paulgraham.com/";

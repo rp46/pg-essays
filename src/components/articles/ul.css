@@ -1,0 +1,11 @@
+
+ul {
+    list-style-type: none;
+    margin: 10px 12px;
+}
+
+li {
+    border-radius: 3px;
+    padding: 10px 20px;
+    font-size: 18px;
+}
