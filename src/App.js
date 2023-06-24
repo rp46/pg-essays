@@ -1,15 +1,20 @@
 import "./styles.css";
-import React from "react";
-import essays from "./data/pg-essays.json";
-import UnorderedList from "./components/articles/UnorderedList";
-import { PG_WEB_URL } from "./constants";
+import React, { useState } from "react";
+import data from "./data/pg-full-articles.json";
+import Article from "./components/Article";
+import Articles from "./components/Articles";
 
 const App = () => {
+  const [essay, setEssay] = useState(null);
+  const handleClick = (essayMaskingName) => {
+    setEssay(essayMaskingName);
+  };
+
   return (
     <div className="container">
       <main>
-        <h1><a href={PG_WEB_URL}>Paul Graham Essays</a></h1>
-        <UnorderedList data={essays} />
+        {essay && <Article handleClick={handleClick} essayMaskingName={essay} />}
+        {!essay && <Articles data={data} handleClick={handleClick} />}
       </main>
     </div>
   );

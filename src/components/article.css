@@ -1,0 +1,24 @@
+.essay {
+    padding: 0 20px;
+    font-size: 18px;
+    line-height: 1.51;
+    max-width: 600px;
+}
+
+.back-arrow {
+    font-size: 15px;
+    margin: 10px;
+}
+
+@media only screen and (min-width: 1000px) {
+    .back-arrow {
+        position: fixed;
+        top: 0;
+        left: 0;
+        margin: 30px;
+    }
+
+    h1 {
+        padding-bottom: 50px;
+    }    
+}

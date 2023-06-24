@@ -18,16 +18,12 @@
 }
 
 main {
-    max-width: 1400px;
+    max-width: 800px;
     border-radius: 30px;
 }
 
 h1 {
     padding: 10px 12px;
-    font-size: 1.8em;
-}
-
-h1 > a:visited,
-h1 > a:hover {
-    color: black;
+    font-size: 1.6em;
+    padding-bottom: 15px;
 }
