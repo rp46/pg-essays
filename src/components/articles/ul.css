@@ -5,7 +5,9 @@ ul {
 }
 
 li {
-    border-radius: 3px;
+    border-radius: 30px;
     padding: 10px 20px;
+    margin: 5px 0;
     font-size: 18px;
+    background-color:azure;
 }
