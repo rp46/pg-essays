@@ -6,10 +6,11 @@ import { useEffect } from "react";
 
 const Article = ({ handleClick, essayMaskingName = "" }) => {
   useEffect(() => {
+    const handleScroll = () => window.scrollTo({ top: window.top, behavior:"smooth" });
     const scrollToTop = document.querySelector(".scroll-to-top");
-    scrollToTop && scrollToTop.addEventListener('click', () => window.scrollTo({ top: window.top, behavior:"smooth" }));
+    scrollToTop && scrollToTop.addEventListener('click', handleScroll);
 
-    return () => scrollToTop.removeEventListener('click');
+    return () => scrollToTop.removeEventListener('click', handleScroll);
   }, [essayMaskingName]);
 
   if (!essayMaskingName) {
