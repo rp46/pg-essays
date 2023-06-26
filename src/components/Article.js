@@ -3,6 +3,7 @@ import articles from "../data/pg-full-articles.json";
 import PropTypes from "prop-types";
 import "./article.css";
 import { useEffect } from "react";
+import { LOCAL_STORE_READ_ESSAYS_KEY } from "../constants";
 
 const Article = ({ handleClick, essayMaskingName = "" }) => {
   useEffect(() => {
@@ -18,6 +19,13 @@ const Article = ({ handleClick, essayMaskingName = "" }) => {
   }
 
   const article = articles[essayMaskingName];
+
+  let storedEssays = JSON.parse(localStorage.getItem(LOCAL_STORE_READ_ESSAYS_KEY)) || {};
+  if(!storedEssays.hasOwnProperty(essayMaskingName)) {
+    storedEssays[essayMaskingName] = article ? article.title : "";
+    localStorage.setItem(LOCAL_STORE_READ_ESSAYS_KEY, JSON.stringify(storedEssays));
+  }
+  
   return (
     <article className="essay">
       <div className="back-arrow" onClick={() => handleClick("")}>
