@@ -1,11 +1,10 @@
 import React from "react";
-import articles from "../data/pg-full-articles.json";
 import PropTypes from "prop-types";
 import "./article.css";
 import { useEffect } from "react";
 import { LOCAL_STORE_READ_ESSAYS_KEY } from "../constants";
 
-const Article = ({ handleClick, essayMaskingName = "" }) => {
+const Article = ({ handleClick, article = {}, essayMaskingName = "" }) => {
   useEffect(() => {
     const handleScroll = () => window.scrollTo({ top: window.top, behavior:"smooth" });
     const scrollToTop = document.querySelector(".scroll-to-top");
@@ -17,8 +16,6 @@ const Article = ({ handleClick, essayMaskingName = "" }) => {
   if (!essayMaskingName) {
     return <></>;
   }
-
-  const article = articles[essayMaskingName];
 
   let storedEssays = JSON.parse(localStorage.getItem(LOCAL_STORE_READ_ESSAYS_KEY)) || {};
   if(!storedEssays.hasOwnProperty(essayMaskingName)) {
@@ -32,7 +29,7 @@ const Article = ({ handleClick, essayMaskingName = "" }) => {
         &larr;&nbsp;Go&nbsp;Back
       </div>
       <div dangerouslySetInnerHTML={{ __html: article.html }} />
-      <div className="scroll-to-top">&#94;</div>
+      <div className="scroll-to-top">&#11121;</div>
     </article>
   );
 };

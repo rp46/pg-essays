@@ -13,7 +13,7 @@ const App = () => {
   return (
     <div className="container">
       <main>
-        {essay && <Article handleClick={handleClick} essayMaskingName={essay} />}
+        {essay && <Article handleClick={handleClick} article={data[essay]} essayMaskingName={essay} />}
         {!essay && <Articles data={data} handleClick={handleClick} />}
       </main>
     </div>

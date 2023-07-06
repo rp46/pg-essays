@@ -3,6 +3,7 @@
     font-size: 18px;
     line-height: 1.51;
     max-width: 600px;
+    margin-bottom: 60px;
 }
 
 .back-arrow {
@@ -11,13 +12,14 @@
 }
 
 .scroll-to-top {
-    padding: 10px 20px;
+    padding: 0 12px;
     border-radius: 30px;
     background-color: aquamarine;
     position: fixed;
     bottom: 30px;
     right: 30px;
-    box-shadow: 5px 5px #888888;
+    box-shadow: 3px 3px #888888;
+    font-size: 1.5em;
 }
 
 @media only screen and (min-width: 1000px) {
